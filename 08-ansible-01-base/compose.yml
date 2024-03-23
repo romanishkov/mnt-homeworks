@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  centos8:
+    container_name: centos8
+    image: pycontribs/centos:8
+    entrypoint: "sleep infinity"
+  ubuntu:
+    container_name: ubuntu
+    image: pycontribs/ubuntu
+    entrypoint: "sleep infinity"
+  fedora:
+    container_name: fedora_host
+    image: pycontribs/fedora
+    entrypoint: "sleep infinity"
