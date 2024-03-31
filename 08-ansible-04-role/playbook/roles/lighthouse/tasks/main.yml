@@ -1,0 +1,15 @@
+---
+# tasks file for lighthouse-role
+- name: Lighthouse | git clone
+  become: true
+  git:
+    repo: "{{ lighthouse_git }}"
+    version: master
+    dest: "{{ lighthouse_dir }}"
+- name: write lighthouse nginx config
+  become: true
+  ansible.builtin.template:
+    src: templates/lighthouse.nginx.j2
+    dest: /etc/nginx/conf.d/default.conf
+    mode: 0644
+  notify: reload-nginx

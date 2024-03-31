@@ -1,0 +1,21 @@
+---
+- name: Install nginx git
+  hosts: lighthouse
+  roles:
+    - role: lighthouse
+      become: yes
+
+- name: Install Clickhouse
+  hosts: clickhouse
+  roles:
+    - role: clickhouse
+      become: yes
+      vars:
+      - clickhouse_repo_key: "https://packages.clickhouse.com/rpm/stable/repodata/repomd.xml.key"
+      - ansible_pkg_mgr: "yum"
+
+- name: Install Vector
+  hosts: vector
+  roles:
+    - role: vector
+      become: yes
