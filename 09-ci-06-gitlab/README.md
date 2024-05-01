@@ -25,7 +25,10 @@
 4. Создана директория `/python_api`.
 5. Скрипт из репозитория размещён в /python_api.
 6. Точка вызова: запуск скрипта.
-7. При комите в любую ветку должен собираться docker image с форматом имени hello:gitlab-$CI_COMMIT_SHORT_SHA . Образ должен быть выложен в Gitlab registry или yandex registry.   
+7. При комите в любую ветку должен собираться docker image с форматом имени hello:gitlab-$CI_COMMIT_SHORT_SHA . Образ должен быть выложен в Gitlab registry или yandex registry.  
+
+![](img/ya-registry.png)
+ 
 
 ### Product Owner
 
@@ -35,6 +38,9 @@
 2. Текст с `{ "message": "Already started" }` на `{ "message": "Running"}`.
 3. Issue поставить label: feature.
 
+![](img/owner.png)
+
+
 ### Developer
 
 Пришёл новый Issue на доработку, вам нужно:
@@ -43,22 +49,33 @@
 2. Внести изменения по тексту из задания.
 3. Подготовить Merge Request, влить необходимые изменения в `master`, проверить, что сборка прошла успешно.
 
+![](img/developer.png)
+
 
 ### Tester
 
 Разработчики выполнили новый Issue, необходимо проверить валидность изменений:
 
 1. Поднять докер-контейнер с образом `python-api:latest` и проверить возврат метода на корректность.
+
+![](img/tester.png)
+
 2. Закрыть Issue с комментарием об успешности прохождения, указав желаемый результат и фактически достигнутый.
+
+![](img/tester_close.png)
+
 
 ## Итог
 
 В качестве ответа пришлите подробные скриншоты по каждому пункту задания:
 
-- файл gitlab-ci.yml;
-- Dockerfile; 
-- лог успешного выполнения пайплайна;
+- файл gitlab-ci.yml;        [gitlab-ci.yml](repository/gitlab-ci.yml)
+- Dockerfile;         [Dockerfile](repository/Dockerfile)
+- лог успешного выполнения пайплайна;        [pipeline.log](repository/pipeline.log)
 - решённый Issue.
+
+![](img/tester_close.png)
+
 
 ### Важно 
 После выполнения задания выключите и удалите все задействованные ресурсы в Yandex Cloud.

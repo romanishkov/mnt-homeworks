@@ -1,0 +1,125 @@
+[0KRunning with gitlab-runner 16.11.0 (91a27b2a)[0;m
+[0K  on gitlab-runner dzNNwRYj8, system ID: s_3ef3ad301e0f[0;m
+section_start:1714559448:prepare_executor[0K[0K[36;1mPreparing the "docker" executor[0;m[0;m
+[0KUsing Docker executor with image docker:26.1 ...[0;m
+[0KStarting service docker:26.1-dind ...[0;m
+[0KPulling docker image docker:26.1-dind ...[0;m
+[0KUsing docker image sha256:7dd8081463dacc456f31bdcd773e7f1ad8954592ca1a3052a164bd3f45ef3ca3 for docker:26.1-dind with digest docker@sha256:56e2c522194d81689c2787c76304777199cbdc741d7dd798d06e33967361d92f ...[0;m
+[0KWaiting for services to be up and running (timeout 30 seconds)...[0;m
+
+[0;33m*** WARNING:[0;m Service runner-dznnwryj8-project-1-concurrent-0-db661f0622e8d055-docker-0 probably didn't start properly.
+
+Health check error:
+service "runner-dznnwryj8-project-1-concurrent-0-db661f0622e8d055-docker-0-wait-for-service" timeout
+
+Health check container logs:
+2024-05-01T10:30:53.061173824Z waiting for TCP connection to 172.17.0.2 on [2375 2376]...
+2024-05-01T10:30:53.061398173Z dialing 172.17.0.2:2375...
+2024-05-01T10:30:53.061780664Z dialing 172.17.0.2:2376...
+2024-05-01T10:30:54.062173667Z dialing 172.17.0.2:2375...
+2024-05-01T10:30:54.062200965Z dialing 172.17.0.2:2376...
+2024-05-01T10:30:55.062420197Z dialing 172.17.0.2:2376...
+2024-05-01T10:30:55.062455045Z dialing 172.17.0.2:2375...
+
+Service container logs:
+2024-05-01T10:30:53.320578086Z Certificate request self-signature ok
+2024-05-01T10:30:53.320619840Z subject=CN = docker:dind server
+2024-05-01T10:30:53.331504886Z /certs/server/cert.pem: OK
+2024-05-01T10:30:54.129006991Z Certificate request self-signature ok
+2024-05-01T10:30:54.129028414Z subject=CN = docker:dind client
+2024-05-01T10:30:54.140158030Z /certs/client/cert.pem: OK
+2024-05-01T10:30:54.142218779Z cat: can't open '/proc/net/ip6_tables_names': No such file or directory
+2024-05-01T10:30:54.142739685Z cat: can't open '/proc/net/arp_tables_names': No such file or directory
+2024-05-01T10:30:54.144450152Z ip: can't find device 'nf_tables'
+2024-05-01T10:30:54.145181668Z nf_tables             253952 43 nft_chain_nat,nft_counter,nft_compat
+2024-05-01T10:30:54.145518604Z libcrc32c              16384  3 nf_nat,nf_conntrack,nf_tables
+2024-05-01T10:30:54.145527452Z nfnetlink              20480  4 nf_conntrack_netlink,nft_compat,nf_tables
+2024-05-01T10:30:54.145969499Z modprobe: can't change directory to '/lib/modules': No such file or directory
+2024-05-01T10:30:54.147445406Z ip: can't find device 'ip_tables'
+2024-05-01T10:30:54.148313933Z ip_tables              36864  0 
+2024-05-01T10:30:54.148432224Z x_tables               53248  5 xt_conntrack,xt_MASQUERADE,xt_addrtype,nft_compat,ip_tables
+2024-05-01T10:30:54.148862351Z modprobe: can't change directory to '/lib/modules': No such file or directory
+2024-05-01T10:30:54.150033769Z iptables v1.8.10 (nf_tables)
+2024-05-01T10:30:54.151877089Z mount: permission denied (are you root?)
+2024-05-01T10:30:54.151968672Z Could not mount /sys/kernel/security.
+2024-05-01T10:30:54.152037341Z AppArmor detection and --privileged mode might break.
+2024-05-01T10:30:54.152969715Z mount: permission denied (are you root?)
+
+[0;33m*********[0;m
+
+[0KPulling docker image docker:26.1 ...[0;m
+[0KUsing docker image sha256:7dd8081463dacc456f31bdcd773e7f1ad8954592ca1a3052a164bd3f45ef3ca3 for docker:26.1 with digest docker@sha256:56e2c522194d81689c2787c76304777199cbdc741d7dd798d06e33967361d92f ...[0;m
+section_end:1714559485:prepare_executor[0Ksection_start:1714559485:prepare_script[0K[0K[36;1mPreparing environment[0;m[0;m
+Running on runner-dznnwryj8-project-1-concurrent-0 via gitlab-runner...
+section_end:1714559486:prepare_script[0Ksection_start:1714559486:get_sources[0K[0K[36;1mGetting source from Git repository[0;m[0;m
+[32;1mFetching changes with git depth set to 20...[0;m
+Reinitialized existing Git repository in /builds/root/netology-task/.git/
+[32;1mChecking out 098a3318 as detached HEAD (ref is main)...[0;m
+
+[32;1mSkipping Git submodules setup[0;m
+section_end:1714559486:get_sources[0Ksection_start:1714559486:step_script[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
+[0KUsing docker image sha256:7dd8081463dacc456f31bdcd773e7f1ad8954592ca1a3052a164bd3f45ef3ca3 for docker:26.1 with digest docker@sha256:56e2c522194d81689c2787c76304777199cbdc741d7dd798d06e33967361d92f ...[0;m
+[32;1m$ echo "${CI_REGISTRY_KEY}" | docker login ${CI_REGISTRY} -u json_key --password-stdin[0;m
+Login Succeeded
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+[32;1m$ docker build "${CI_PROJECT_DIR}" --file "${CI_PROJECT_DIR}/Dockerfile" --tag "${CI_REGISTRY}/${CI_PROJECT_PATH}/hello:gitlab-${CI_COMMIT_SHORT_SHA}"[0;m
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.02kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/centos:7
+#2 DONE 0.4s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/centos:7@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 63B done
+#5 DONE 0.0s
+
+#6 [3/6] COPY requirements.txt requirements.txt
+#6 CACHED
+
+#7 [5/6] RUN mkdir /python_api
+#7 CACHED
+
+#8 [4/6] RUN pip install -r requirements.txt
+#8 CACHED
+
+#9 [2/6] RUN yum update -q -y   && yum install -q -y wget make git gcc openssl-devel bzip2-devel libffi-devel   && cd /usr/src   && wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz   && tar xzf Python-3.7.4.tgz   && cd Python-3.7.4   && ./configure --enable-optimizations   && make altinstall   && rm -rf /usr/src/Python-3.7.4.tgz   && yum clean all   && alternatives --install /usr/bin/python python /usr/bin/python2 50   && alternatives --install /usr/bin/python python /usr/local/bin/python3.7 70   && alternatives --set python /usr/local/bin/python3.7   && ln -s /usr/local/bin/pip3.7 /usr/bin/pip   && pip install --no-cache-dir --upgrade pip pipenv setuptools wheel   && ln -s /usr/local/bin/pipenv /usr/bin/pipenv
+#9 CACHED
+
+#10 [6/6] COPY app.py /python_api/app.py
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers done
+#11 writing image sha256:0ec2a8afdf515a37a97ec89113c4ea7a7935cedb776d1e83a87c1e0ec803bec3 0.0s done
+#11 naming to cr.yandex/crpeg9ni34v2ai2ljoaa/root/netology-task/hello:gitlab-098a3318 0.0s done
+#11 DONE 0.0s
+[32;1m$ docker push "${CI_REGISTRY}/${CI_PROJECT_PATH}/hello:gitlab-${CI_COMMIT_SHORT_SHA}"[0;m
+The push refers to repository [cr.yandex/crpeg9ni34v2ai2ljoaa/root/netology-task/hello]
+fedd7b2993dd: Preparing
+021510bede93: Preparing
+70daa635f0a2: Preparing
+375c435fba23: Preparing
+16debc0b45ee: Preparing
+174f56854903: Preparing
+174f56854903: Waiting
+021510bede93: Layer already exists
+375c435fba23: Layer already exists
+16debc0b45ee: Layer already exists
+70daa635f0a2: Layer already exists
+174f56854903: Layer already exists
+fedd7b2993dd: Pushed
+gitlab-098a3318: digest: sha256:3650888d4e99196420d03bdbe76a293e8ea922d31d8d4fc414c6a94f530030cf size: 1574
+section_end:1714559491:step_script[0K[32;1mJob succeeded[0;m
